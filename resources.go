@@ -24,15 +24,15 @@ func (c *Client) GetResourceCurrent(re string) (ResourceCurrent, error) {
 	return *current, err
 }
 
-func (c *Client) GetResourceReadings(re, period, function string, from, to time.Time) (Readings, error) {
-	r := &Readings{}
+func (c *Client) GetResourceReading(re, period, function string, from, to time.Time) (Reading, error) {
+	r := &Reading{}
 
 	params := url.Values{}
 	params.Add("period", period)
 	params.Add("function", function)
-	params.Add("from", from.Format(readingsDateFormatStr))
-	params.Add("to", to.Format(readingsDateFormatStr))
+	params.Add("from", from.Format(readingDateFormatStr))
+	params.Add("to", to.Format(readingDateFormatStr))
 
-	err := c.makeRequest(path.Join(resourceEndpoint, re, readingsEndpoint), r, params)
+	err := c.makeRequest(path.Join(resourceEndpoint, re, readingEndpoint), r, params)
 	return *r, err
 }

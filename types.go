@@ -124,7 +124,7 @@ type ResourceCurrent struct {
 	Classifier     ClassifierField `json:"classifier"`
 }
 
-type Readings struct {
+type Reading struct {
 	Status         string          `json:"status"`
 	Name           string          `json:"name"`
 	ResourceTypeID string          `json:"resourceTypeId"`
