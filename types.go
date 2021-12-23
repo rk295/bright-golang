@@ -6,54 +6,20 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-type Config struct {
-	Username      string
-	Password      string
-	applicationID string
-}
-
-type Client struct {
-	config   *Config
-	auth     Auth
-	Logger   *logrus.Logger
-	LogLevel logrus.Level
-}
-
+// Auth holds the authentication token and expiry time.
 type Auth struct {
 	token  string
 	expiry time.Time
 }
 
-type ClassifierField string
-
-const (
-	ElectricityConsumption     ClassifierField = "electricity.consumption"
-	ElectricityConsumptionCost ClassifierField = "electricity.consumption.cost"
-	GasConsumption             ClassifierField = "gas.consumption"
-	GasConsumptionCost         ClassifierField = "gas.consumption.cost"
-)
-
-type UnitField string
-
-const (
-	KwH   UnitField = "kWh"
-	Pence UnitField = "pence"
-)
-
-type TypeField string
-
-const (
-	Gas         TypeField = "GAS"
-	Electricity TypeField = "ELEC"
-	Power       TypeField = "PWER"
-)
-
+// AuthRequest represents a request to the Bright API to authenticate ourselves.
 type AuthRequest struct {
 	Username      string `json:"username"`
 	Password      string `json:"password"`
 	ApplicationID string `json:"applicationId"`
 }
 
+// AuthResponse holds the response from an authentication response.
 type AuthResponse struct {
 	Valid                   bool          `json:"valid"`
 	Token                   string        `json:"token"`
@@ -65,31 +31,71 @@ type AuthResponse struct {
 	Name                    string        `json:"name"`
 }
 
-type VirtualEntities []VirtualEntity
-
-type VirtualEntity struct {
-	Clone         bool          `json:"clone"`
-	Active        bool          `json:"active"`
-	ApplicationID string        `json:"applicationId"`
-	PostalCode    string        `json:"postalCode"`
-	Resources     []VEResources `json:"resources"`
-	OwnerID       string        `json:"ownerId"`
-	Name          string        `json:"name"`
-	VeChildren    []interface{} `json:"veChildren"`
-	VeTypeID      string        `json:"veTypeId"`
-	VeID          string        `json:"veId"`
-	UpdatedAt     time.Time     `json:"updatedAt"`
-	CreatedAt     time.Time     `json:"createdAt"`
+// Config represents the configuration of the client. Both Username and Password
+// must be set, or if using NewClientFromEnv they will be set for you using the
+// os environment.
+type Config struct {
+	Username      string
+	Password      string
+	applicationID string
 }
 
-type VEResources struct {
-	ResourceID     string `json:"resourceId"`
-	ResourceTypeID string `json:"resourceTypeId"`
-	Name           string `json:"name"`
+// Client represents a bright API client. You can optionally add an existing
+// logger with WithLogger() and set its level with WithLevel().
+type Client struct {
+	config   *Config
+	auth     Auth
+	Logger   *logrus.Logger
+	LogLevel logrus.Level
 }
 
+// ClassfierField is the type applied for the classifier fields returned by the
+// API.
+type ClassifierField string
+
+const (
+	ElectricityConsumption     ClassifierField = "electricity.consumption"
+	ElectricityConsumptionCost ClassifierField = "electricity.consumption.cost"
+	GasConsumption             ClassifierField = "gas.consumption"
+	GasConsumptionCost         ClassifierField = "gas.consumption.cost"
+)
+
+// DataSourceResourceTypeInfo holds the Unit and Type of the Data Source
+// Resource returned by the API.
+type DataSourceResourceTypeInfo struct {
+	Unit UnitField `json:"unit"`
+	Type TypeField `json:"type"`
+}
+
+// DataSourceUnitInfo holds Data Source unit info.
+type DataSourceUnitInfo struct {
+	Shid string `json:"shid"`
+}
+
+// Query represents a query to the readings API.
+type Query struct {
+	From     string `json:"from"`
+	To       string `json:"to"`
+	Period   string `json:"period"`
+	Function string `json:"function"`
+}
+
+// Reading represents a single reading returned from the API.
+type Reading struct {
+	Status         string          `json:"status"`
+	Name           string          `json:"name"`
+	ResourceTypeID string          `json:"resourceTypeId"`
+	ResourceID     string          `json:"resourceId"`
+	Query          Query           `json:"query"`
+	Data           [][]float32     `json:"data"`
+	Units          UnitField       `json:"units"`
+	Classifier     ClassifierField `json:"classifier"`
+}
+
+// Resources is a slice of Resources.
 type Resources []Resource
 
+// Resource represents a resource as defined by the API.
 type Resource struct {
 	Active                     bool                       `json:"active"`
 	ResourceTypeID             string                     `json:"resourceTypeId"`
@@ -106,14 +112,8 @@ type Resource struct {
 	CreatedAt                  time.Time                  `json:"createdAt"`
 	DataSourceUnitInfo         DataSourceUnitInfo         `json:"dataSourceUnitInfo"`
 }
-type DataSourceResourceTypeInfo struct {
-	Unit UnitField `json:"unit"`
-	Type TypeField `json:"type"`
-}
-type DataSourceUnitInfo struct {
-	Shid string `json:"shid"`
-}
 
+// Resourcecurrent represents the current (as in now) usage of the Resource.
 type ResourceCurrent struct {
 	Status         string          `json:"status"`
 	Name           string          `json:"name"`
@@ -124,20 +124,46 @@ type ResourceCurrent struct {
 	Classifier     ClassifierField `json:"classifier"`
 }
 
-type Reading struct {
-	Status         string          `json:"status"`
-	Name           string          `json:"name"`
-	ResourceTypeID string          `json:"resourceTypeId"`
-	ResourceID     string          `json:"resourceId"`
-	Query          Query           `json:"query"`
-	Data           [][]float32     `json:"data"`
-	Units          UnitField       `json:"units"`
-	Classifier     ClassifierField `json:"classifier"`
+// TypeField is the type used for the type in the DataSourceResourceTypeInfo
+// struct.
+type TypeField string
+
+const (
+	Gas         TypeField = "GAS"
+	Electricity TypeField = "ELEC"
+	Power       TypeField = "PWER"
+)
+
+// VirtualEntities is a slice of VirtualEntities
+type VirtualEntities []VirtualEntity
+
+// VirtualEntity represents a single Virtual Entity returned by the API.
+type VirtualEntity struct {
+	Clone         bool          `json:"clone"`
+	Active        bool          `json:"active"`
+	ApplicationID string        `json:"applicationId"`
+	PostalCode    string        `json:"postalCode"`
+	Resources     []VEResources `json:"resources"`
+	OwnerID       string        `json:"ownerId"`
+	Name          string        `json:"name"`
+	VeChildren    []interface{} `json:"veChildren"`
+	VeTypeID      string        `json:"veTypeId"`
+	VeID          string        `json:"veId"`
+	UpdatedAt     time.Time     `json:"updatedAt"`
+	CreatedAt     time.Time     `json:"createdAt"`
 }
 
-type Query struct {
-	From     string `json:"from"`
-	To       string `json:"to"`
-	Period   string `json:"period"`
-	Function string `json:"function"`
+// VEResources represents the Resources returned as part of a VirtualEntity.
+type VEResources struct {
+	ResourceID     string `json:"resourceId"`
+	ResourceTypeID string `json:"resourceTypeId"`
+	Name           string `json:"name"`
 }
+
+// UnitField is the type used for the Units returned as part of a Resource.
+type UnitField string
+
+const (
+	KwH   UnitField = "kWh"
+	Pence UnitField = "pence"
+)

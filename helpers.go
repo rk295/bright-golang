@@ -2,34 +2,48 @@ package bright
 
 import "fmt"
 
+// GetElectricityConsumptionResourceID returns the resource ID of the
+// electricity consumption resource.
 func (c *Client) GetElectricityConsumptionResourceID() (string, error) {
 	return c.findByResourceTypeID(electricityConsumptionResourceTypeId)
 }
 
+// GetGasConsumptionResourceID returns the resource ID of the gas consumption
+// resource.
 func (c *Client) GetGasConsumptionResourceID() (string, error) {
 	return c.findByResourceTypeID(gasConsumptionResourceTypeId)
 }
 
+// GetElectricityConsumptionCostResourceID returns the resource ID of the
+// electricity consumption cost resource.
 func (c *Client) GetElectricityConsumptionCostResourceID() (string, error) {
 	return c.findByResourceTypeID(electricityConsumptionCostResourceTypeId)
 }
 
+// GetGasConsumptionCostResourceID returns the resource ID of the gas
+// consumption cost resource.
 func (c *Client) GetGasConsumptionCostResourceID() (string, error) {
 	return c.findByResourceTypeID(gasConsumptionCostResourceTypeId)
 }
 
+// GetElectricityCurrent returns a ResourceCurrent for the electricity
+// consumption resource.
 func (c *Client) GetElectricityCurrent() (ResourceCurrent, error) {
 	return c.getCurrent(electricityConsumptionResourceTypeId)
 }
 
+// GetGasCurrent returns a ResourceCurrent for the gas consumption resource.
 func (c *Client) GetGasCurrent() (ResourceCurrent, error) {
 	return c.getCurrent(gasConsumptionResourceTypeId)
 }
 
+// GetElectricityCurrentKwh returns the KwH for the electricity consumption
+// resource.
 func (c *Client) GetElectricityCurrentKwh() (int, error) {
 	return c.getCurrentKwh(electricityConsumptionResourceTypeId)
 }
 
+// GetGasCurrentKwh returns the KwH for the gas consumption resource.
 func (c *Client) GetGasCurrentKwh() (int, error) {
 	return c.getCurrentKwh(gasConsumptionResourceTypeId)
 }
