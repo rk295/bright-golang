@@ -32,3 +32,7 @@ Ouput:
 	566
 
 Indicating that 566W of electricity is being used now.
+
+## Sample app
+
+In [cmd/sample-client](cmd/sample-client) there is a simple sample application. Have a look at the [README.md](cmd/sample-client/README.md) in there for more.
