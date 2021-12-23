@@ -39,7 +39,7 @@ func (c *Client) getToken() error {
 	authRequest := &AuthRequest{
 		Username:      c.config.Username,
 		Password:      c.config.Password,
-		ApplicationID: c.config.applicationID,
+		ApplicationID: applicationID,
 	}
 
 	jsonPayload, err := json.Marshal(authRequest)

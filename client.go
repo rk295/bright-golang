@@ -10,14 +10,15 @@ import (
 // NewClient returns a bright.Client.
 func NewClient(c *Config) (*Client, error) {
 	c.applicationID = applicationID
-	client := &Client{config: c}
-	return client, nil
+	return &Client{config: c}, nil
 }
 
 // NewClientFromEnv returns a bright.Client drawing its configuration from the
 // os environment.
 func NewClientFromEnv() (*Client, error) {
-	c := &Config{}
+	c := &Config{
+		applicationID: applicationID,
+	}
 
 	username := os.Getenv(usernameEnv)
 	if username == "" {

@@ -77,16 +77,16 @@ func (c *Client) doRequest(r *http.Request, t interface{}) error {
 	}
 	defer resp.Body.Close()
 
-	c.Logger.Debugf("status code: %d", resp.StatusCode)
-	if resp.StatusCode != http.StatusOK {
-		return fmt.Errorf("got status code %d", resp.StatusCode)
-	}
-
 	bodyBytes, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return err
 	}
 	c.Logger.Trace("body: ", string(bodyBytes))
+
+	c.Logger.Debugf("status code: %d", resp.StatusCode)
+	if resp.StatusCode != http.StatusOK {
+		return fmt.Errorf("got status code %d", resp.StatusCode)
+	}
 
 	return json.Unmarshal(bodyBytes, &t)
 
