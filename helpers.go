@@ -5,48 +5,48 @@ import "fmt"
 // GetElectricityConsumptionResourceID returns the resource ID of the
 // electricity consumption resource.
 func (c *Client) GetElectricityConsumptionResourceID() (string, error) {
-	return c.findByResourceTypeID(ElectricityConsumptionResourceTypeId)
+	return c.findByResourceTypeID(ElectricityConsumptionResource)
 }
 
 // GetGasConsumptionResourceID returns the resource ID of the gas consumption
 // resource.
 func (c *Client) GetGasConsumptionResourceID() (string, error) {
-	return c.findByResourceTypeID(GasConsumptionResourceTypeId)
+	return c.findByResourceTypeID(GasConsumptionResource)
 }
 
 // GetElectricityConsumptionCostResourceID returns the resource ID of the
 // electricity consumption cost resource.
 func (c *Client) GetElectricityConsumptionCostResourceID() (string, error) {
-	return c.findByResourceTypeID(ElectricityConsumptionCostResourceTypeId)
+	return c.findByResourceTypeID(ElectricityConsumptionCostResource)
 }
 
 // GetGasConsumptionCostResourceID returns the resource ID of the gas
 // consumption cost resource.
 func (c *Client) GetGasConsumptionCostResourceID() (string, error) {
-	return c.findByResourceTypeID(GasConsumptionCostResourceTypeId)
+	return c.findByResourceTypeID(GasConsumptionCostResource)
 }
 
 // GetElectricityCurrent returns a ResourceCurrent for the electricity
 // consumption resource.
 func (c *Client) GetElectricityCurrent() (ResourceCurrent, error) {
-	return c.getCurrent(ElectricityConsumptionResourceTypeId)
+	return c.getCurrent(ElectricityConsumptionResource)
 }
 
 // GetGasCurrent returns a ResourceCurrent for the gas consumption resource.
 func (c *Client) GetGasCurrent() (ResourceCurrent, error) {
-	return c.getCurrent(GasConsumptionResourceTypeId)
+	return c.getCurrent(GasConsumptionResource)
 }
 
 // GetElectricityCurrentWatts returns the current Watts for the electricity
 // consumption resource.
 func (c *Client) GetElectricityCurrentWatts() (int, error) {
-	return c.getCurrentWatts(ElectricityConsumptionResourceTypeId)
+	return c.getCurrentWatts(ElectricityConsumptionResource)
 }
 
 // GetGasCurrentWatts returns the currents Watts for the gas consumption
 // resource.
 func (c *Client) GetGasCurrentWatts() (int, error) {
-	return c.getCurrentWatts(GasConsumptionResourceTypeId)
+	return c.getCurrentWatts(GasConsumptionResource)
 }
 
 func (c *Client) findByResourceTypeID(typeId TypeIDField) (string, error) {

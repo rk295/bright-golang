@@ -60,11 +60,19 @@ const (
 	GasConsumptionCost         ClassifierField = "gas.consumption.cost"
 )
 
+// DataSourceUnitField is the type used for the Units returned as part of a Resource.
+type DataSourceUnitField string
+
+const (
+	KwH   DataSourceUnitField = "kWh"
+	Pence DataSourceUnitField = "pence"
+)
+
 // DataSourceResourceTypeInfo holds the Unit and Type of the Data Source
 // Resource returned by the API.
 type DataSourceResourceTypeInfo struct {
-	Unit UnitField `json:"unit"`
-	Type TypeField `json:"type"`
+	Unit DataSourceUnitField `json:"unit"`
+	Type TypeField           `json:"type"`
 }
 
 // DataSourceUnitInfo holds Data Source unit info.
@@ -82,14 +90,14 @@ type Query struct {
 
 // Reading represents a single reading returned from the API.
 type Reading struct {
-	Status         string          `json:"status"`
-	Name           string          `json:"name"`
-	ResourceTypeID string          `json:"resourceTypeId"`
-	ResourceID     string          `json:"resourceId"`
-	Query          Query           `json:"query"`
-	Data           [][]float32     `json:"data"`
-	Units          UnitField       `json:"units"`
-	Classifier     ClassifierField `json:"classifier"`
+	Status         string           `json:"status"`
+	Name           string           `json:"name"`
+	ResourceTypeID string           `json:"resourceTypeId"`
+	ResourceID     string           `json:"resourceId"`
+	Query          Query            `json:"query"`
+	Data           [][]float32      `json:"data"`
+	Units          ReadingUnitField `json:"units"`
+	Classifier     ClassifierField  `json:"classifier"`
 }
 
 // Resources is a slice of Resources.
@@ -106,33 +114,41 @@ type Resource struct {
 	DataSourceResourceTypeInfo DataSourceResourceTypeInfo `json:"dataSourceResourceTypeInfo"`
 	DataSourceType             string                     `json:"dataSourceType"`
 	Classifier                 ClassifierField            `json:"classifier"`
-	BaseUnit                   UnitField                  `json:"baseUnit"`
+	BaseUnit                   DataSourceUnitField        `json:"baseUnit"`
 	ResourceID                 string                     `json:"resourceId"`
 	UpdatedAt                  time.Time                  `json:"updatedAt"`
 	CreatedAt                  time.Time                  `json:"createdAt"`
 	DataSourceUnitInfo         DataSourceUnitInfo         `json:"dataSourceUnitInfo"`
 }
 
-// TypeIDField holds the various type IDs of resources.
-type TypeIDField string
+// ReadingUnitField represents all the possible units the API can return.
+type ReadingUnitField string
 
 const (
-	ElectricityConsumptionResourceTypeId     TypeIDField = "e3a5db34-6e0c-4221-9653-8d33e27511ba"
-	ElectricityConsumptionCostResourceTypeId TypeIDField = "78859e39-611e-4e84-a402-1d4460abcb56"
-	GasConsumptionResourceTypeId             TypeIDField = "08ab415f-d851-423f-adf4-c2b1e0529e27"
-	GasConsumptionCostResourceTypeId         TypeIDField = "a6b95f41-771d-4bd2-99f4-93ee43c38f5a"
+	Watts       ReadingUnitField = "W"
+	MetersCubed ReadingUnitField = "m3"
 )
 
 // Resourcecurrent represents the current (as in now) usage of the Resource.
 type ResourceCurrent struct {
-	Status         string          `json:"status"`
-	Name           string          `json:"name"`
-	ResourceTypeID TypeIDField     `json:"resourceTypeId"`
-	ResourceID     string          `json:"resourceId"`
-	Data           [][]int         `json:"data"`
-	Units          string          `json:"units"`
-	Classifier     ClassifierField `json:"classifier"`
+	Status         string           `json:"status"`
+	Name           string           `json:"name"`
+	ResourceTypeID TypeIDField      `json:"resourceTypeId"`
+	ResourceID     string           `json:"resourceId"`
+	Data           [][]int          `json:"data"`
+	Units          ReadingUnitField `json:"units"`
+	Classifier     ClassifierField  `json:"classifier"`
 }
+
+// TypeIDField holds the various type IDs of resources.
+type TypeIDField string
+
+const (
+	ElectricityConsumptionResource     TypeIDField = "e3a5db34-6e0c-4221-9653-8d33e27511ba"
+	ElectricityConsumptionCostResource TypeIDField = "78859e39-611e-4e84-a402-1d4460abcb56"
+	GasConsumptionResource             TypeIDField = "08ab415f-d851-423f-adf4-c2b1e0529e27"
+	GasConsumptionCostResource         TypeIDField = "a6b95f41-771d-4bd2-99f4-93ee43c38f5a"
+)
 
 // TypeField is the type used for the type in the DataSourceResourceTypeInfo
 // struct.
@@ -169,11 +185,3 @@ type VEResources struct {
 	ResourceTypeID string `json:"resourceTypeId"`
 	Name           string `json:"name"`
 }
-
-// UnitField is the type used for the Units returned as part of a Resource.
-type UnitField string
-
-const (
-	KwH   UnitField = "kWh"
-	Pence UnitField = "pence"
-)
