@@ -18,9 +18,10 @@ func main() {
 	}
 	c.WithLogger(logger)
 
-	electricityKwh, err := c.GetElectricityCurrentWatts()
+	electricityW, err := c.GetElectricityCurrentWatts()
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Current electricity usage: %dW\n", electricityKwh)
+	fmt.Printf("Current electricity usage: %dW\n", electricityW)
+
 }

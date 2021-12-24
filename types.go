@@ -98,7 +98,7 @@ type Resources []Resource
 // Resource represents a resource as defined by the API.
 type Resource struct {
 	Active                     bool                       `json:"active"`
-	ResourceTypeID             string                     `json:"resourceTypeId"`
+	ResourceTypeID             TypeIDField                `json:"resourceTypeId"`
 	OwnerID                    string                     `json:"ownerId"`
 	Name                       string                     `json:"name"`
 	Description                string                     `json:"description"`
@@ -113,11 +113,21 @@ type Resource struct {
 	DataSourceUnitInfo         DataSourceUnitInfo         `json:"dataSourceUnitInfo"`
 }
 
+// TypeIDField holds the various type IDs of resources.
+type TypeIDField string
+
+const (
+	ElectricityConsumptionResourceTypeId     TypeIDField = "e3a5db34-6e0c-4221-9653-8d33e27511ba"
+	ElectricityConsumptionCostResourceTypeId TypeIDField = "78859e39-611e-4e84-a402-1d4460abcb56"
+	GasConsumptionResourceTypeId             TypeIDField = "08ab415f-d851-423f-adf4-c2b1e0529e27"
+	GasConsumptionCostResourceTypeId         TypeIDField = "a6b95f41-771d-4bd2-99f4-93ee43c38f5a"
+)
+
 // Resourcecurrent represents the current (as in now) usage of the Resource.
 type ResourceCurrent struct {
 	Status         string          `json:"status"`
 	Name           string          `json:"name"`
-	ResourceTypeID string          `json:"resourceTypeId"`
+	ResourceTypeID TypeIDField     `json:"resourceTypeId"`
 	ResourceID     string          `json:"resourceId"`
 	Data           [][]int         `json:"data"`
 	Units          string          `json:"units"`
