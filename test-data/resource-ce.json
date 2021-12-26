@@ -1,0 +1,558 @@
+[{
+        "active": true,
+        "resourceTypeId": "ea02304a-2820-4ea0-8399-f1d1b430c3a0",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Smart Meter, electricity consumption",
+        "description": "adhoc electricity consumption",
+        "label": "electricity consumption",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "ELEC"
+        },
+        "dataSourceType": "ADHOC",
+        "classifier": "electricity.consumption",
+        "baseUnit": "kWh",
+        "resourceId": "3f9478fa-fec7-47a0-82cd-f6ae6358cd74",
+        "updatedAt": "2019-10-18T22:21:06.254Z",
+        "createdAt": "2019-10-18T22:21:05.949Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "b4158501-a678-484a-837a-874194d3bd48",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Smart Meter, electricity cost",
+        "description": "adhoc electricity cost",
+        "label": "electricity cost",
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "ELEC"
+        },
+        "dataSourceType": "ADHOC",
+        "classifier": "electricity.consumption.cost",
+        "baseUnit": "pence",
+        "resourceId": "b4a9ffb5-0a6d-43a3-b52b-93accb63105a",
+        "updatedAt": "2019-10-18T22:21:06.252Z",
+        "createdAt": "2019-10-18T22:21:05.986Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5e10b2a9-5285-4820-a1ec-1896097f83c6",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Relative Humidity",
+        "label": "Relative Humidity for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "humid"
+        },
+        "dataSourceType": "ADHOC",
+        "classifier": "relative_humidity",
+        "baseUnit": "%",
+        "resourceId": "bdb1eec4-b2ef-4750-9985-3c557f3e604e",
+        "updatedAt": "2020-09-29T17:21:22.636Z",
+        "createdAt": "2020-09-29T17:21:22.636Z",
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5ab15442-be6f-48e1-a7e0-191a61a29055",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "RSSI",
+        "description": "for multisensor bluetooth",
+        "label": "Received Signal Strength Indicator",
+        "dataSourceResourceTypeInfo": {
+            "type": "rssi"
+        },
+        "dataSourceType": "ADHOC",
+        "classifier": "signal_strength",
+        "baseUnit": "dBm",
+        "resourceId": "01fbacde-906f-43b0-ab2a-975b29ca3563",
+        "updatedAt": "2020-09-29T17:21:22.777Z",
+        "createdAt": "2020-09-29T17:21:22.777Z",
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "72af5066-efbb-4791-b16c-28d9c5cdb368",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Temperature",
+        "label": "Temperature for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "temp"
+        },
+        "dataSourceType": "ADHOC",
+        "classifier": "temperature",
+        "baseUnit": "°C",
+        "resourceId": "164e9957-799e-473d-8c0a-b2d4253ec753",
+        "updatedAt": "2020-09-29T17:21:22.636Z",
+        "createdAt": "2020-09-29T17:21:22.636Z",
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "2306c471-6a34-4085-8b23-5cc097a2b2d3",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Illuminance",
+        "label": "Illuminance for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "illum"
+        },
+        "dataSourceType": "ADHOC",
+        "classifier": "illuminance",
+        "baseUnit": "lx",
+        "resourceId": "1c864b6f-63d5-4dac-ac1c-a78f88c93295",
+        "updatedAt": "2020-09-29T17:21:22.636Z",
+        "createdAt": "2020-09-29T17:21:22.636Z",
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "2306c471-6a34-4085-8b23-5cc097a2b2d3",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Illuminance",
+        "label": "Illuminance for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "illum"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "illuminance",
+        "baseUnit": "lx",
+        "resourceId": "9d67f615-efd0-4a6b-8618-ffaca4bced5b",
+        "updatedAt": "2020-09-30T20:40:49.705Z",
+        "createdAt": "2020-09-30T20:40:49.148Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e36ce"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5e10b2a9-5285-4820-a1ec-1896097f83c6",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Relative Humidity",
+        "label": "Relative Humidity for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "humid"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "relative_humidity",
+        "baseUnit": "%",
+        "resourceId": "e60d26d1-9325-446e-b5db-ed8ad954be8e",
+        "updatedAt": "2020-09-30T20:40:49.695Z",
+        "createdAt": "2020-09-30T20:40:49.148Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e36ce"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "72af5066-efbb-4791-b16c-28d9c5cdb368",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Temperature",
+        "label": "Temperature for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "temp"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "temperature",
+        "baseUnit": "°C",
+        "resourceId": "1efe4672-19b8-4ad3-a88f-acce5a205514",
+        "updatedAt": "2020-09-30T20:40:49.698Z",
+        "createdAt": "2020-09-30T20:40:49.148Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e36ce"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5ab15442-be6f-48e1-a7e0-191a61a29055",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "RSSI",
+        "description": "for multisensor bluetooth",
+        "label": "Received Signal Strength Indicator",
+        "dataSourceResourceTypeInfo": {
+            "type": "rssi"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "signal_strength",
+        "baseUnit": "dBm",
+        "resourceId": "c593e24f-49d4-4854-933b-53cba9e9abd7",
+        "updatedAt": "2020-09-30T20:40:49.702Z",
+        "createdAt": "2020-09-30T20:40:49.157Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e36ce"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5e10b2a9-5285-4820-a1ec-1896097f83c6",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Relative Humidity",
+        "label": "Relative Humidity for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "humid"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "relative_humidity",
+        "baseUnit": "%",
+        "resourceId": "f1139f8e-297e-44ce-a07a-4901155f2597",
+        "updatedAt": "2020-09-30T20:40:50.577Z",
+        "createdAt": "2020-09-30T20:40:50.465Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "000d6ff5fa36"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "2306c471-6a34-4085-8b23-5cc097a2b2d3",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Illuminance",
+        "label": "Illuminance for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "illum"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "illuminance",
+        "baseUnit": "lx",
+        "resourceId": "1956ee0a-9085-4430-b262-bf2ac42bbd66",
+        "updatedAt": "2020-09-30T20:40:50.582Z",
+        "createdAt": "2020-09-30T20:40:50.465Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "000d6ff5fa36"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "72af5066-efbb-4791-b16c-28d9c5cdb368",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Temperature",
+        "label": "Temperature for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "temp"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "temperature",
+        "baseUnit": "°C",
+        "resourceId": "b8b525d5-ea66-46b8-b13d-07a8d3d645fc",
+        "updatedAt": "2020-09-30T20:40:50.585Z",
+        "createdAt": "2020-09-30T20:40:50.465Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "000d6ff5fa36"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5ab15442-be6f-48e1-a7e0-191a61a29055",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "RSSI",
+        "description": "for multisensor bluetooth",
+        "label": "Received Signal Strength Indicator",
+        "dataSourceResourceTypeInfo": {
+            "type": "rssi"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "signal_strength",
+        "baseUnit": "dBm",
+        "resourceId": "63e4a0e4-2afe-484d-bb22-577d6ac43ba3",
+        "updatedAt": "2020-09-30T20:40:50.579Z",
+        "createdAt": "2020-09-30T20:40:50.471Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "000d6ff5fa36"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "72af5066-efbb-4791-b16c-28d9c5cdb368",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Temperature",
+        "label": "Temperature for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "temp"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "temperature",
+        "baseUnit": "°C",
+        "resourceId": "79b0367e-b3ae-4814-9b61-d25e59805740",
+        "updatedAt": "2020-09-30T20:40:51.122Z",
+        "createdAt": "2020-09-30T20:40:51.015Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e38f6"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5e10b2a9-5285-4820-a1ec-1896097f83c6",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Relative Humidity",
+        "label": "Relative Humidity for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "humid"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "relative_humidity",
+        "baseUnit": "%",
+        "resourceId": "ad386f1d-fdff-44e3-b2eb-8bf302ca11fd",
+        "updatedAt": "2020-09-30T20:40:51.125Z",
+        "createdAt": "2020-09-30T20:40:51.015Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e38f6"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "2306c471-6a34-4085-8b23-5cc097a2b2d3",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Illuminance",
+        "label": "Illuminance for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "illum"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "illuminance",
+        "baseUnit": "lx",
+        "resourceId": "ea010d55-ab8b-45b7-8dc3-e496d83547f2",
+        "updatedAt": "2020-09-30T20:40:51.128Z",
+        "createdAt": "2020-09-30T20:40:51.015Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e38f6"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5ab15442-be6f-48e1-a7e0-191a61a29055",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "RSSI",
+        "description": "for multisensor bluetooth",
+        "label": "Received Signal Strength Indicator",
+        "dataSourceResourceTypeInfo": {
+            "type": "rssi"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "signal_strength",
+        "baseUnit": "dBm",
+        "resourceId": "772b13f8-91f2-4755-affc-97e854b84da2",
+        "updatedAt": "2020-09-30T20:40:51.135Z",
+        "createdAt": "2020-09-30T20:40:51.020Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e38f6"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5e10b2a9-5285-4820-a1ec-1896097f83c6",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Relative Humidity",
+        "label": "Relative Humidity for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "humid"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "relative_humidity",
+        "baseUnit": "%",
+        "resourceId": "1e1ca9f1-1502-4a60-a57b-68811ed15981",
+        "updatedAt": "2020-09-30T20:40:51.648Z",
+        "createdAt": "2020-09-30T20:40:51.471Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e36cc"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "2306c471-6a34-4085-8b23-5cc097a2b2d3",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Illuminance",
+        "label": "Illuminance for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "illum"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "illuminance",
+        "baseUnit": "lx",
+        "resourceId": "bf9e0653-f4a2-4e2f-8915-f6cb4d3ada2a",
+        "updatedAt": "2020-09-30T20:40:51.643Z",
+        "createdAt": "2020-09-30T20:40:51.471Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e36cc"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "72af5066-efbb-4791-b16c-28d9c5cdb368",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Temperature",
+        "label": "Temperature for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "temp"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "temperature",
+        "baseUnit": "°C",
+        "resourceId": "c3e864fd-0a7e-4453-8b7c-e131ade34823",
+        "updatedAt": "2020-09-30T20:40:51.642Z",
+        "createdAt": "2020-09-30T20:40:51.471Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e36cc"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5ab15442-be6f-48e1-a7e0-191a61a29055",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "RSSI",
+        "description": "for multisensor bluetooth",
+        "label": "Received Signal Strength Indicator",
+        "dataSourceResourceTypeInfo": {
+            "type": "rssi"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "signal_strength",
+        "baseUnit": "dBm",
+        "resourceId": "7d8cf9c7-cbfa-4d33-a09b-2b76abc21e75",
+        "updatedAt": "2020-09-30T20:40:51.648Z",
+        "createdAt": "2020-09-30T20:40:51.475Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd76e36cc"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5e10b2a9-5285-4820-a1ec-1896097f83c6",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Relative Humidity",
+        "label": "Relative Humidity for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "humid"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "relative_humidity",
+        "baseUnit": "%",
+        "resourceId": "a50e0983-2c4c-438f-aea6-7d81c65a8f8d",
+        "updatedAt": "2020-09-30T20:41:35.986Z",
+        "createdAt": "2020-09-30T20:41:35.885Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd7422275"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "2306c471-6a34-4085-8b23-5cc097a2b2d3",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Illuminance",
+        "label": "Illuminance for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "illum"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "illuminance",
+        "baseUnit": "lx",
+        "resourceId": "645b53c4-1533-447c-ae78-d66d9978c9f2",
+        "updatedAt": "2020-09-30T20:41:35.989Z",
+        "createdAt": "2020-09-30T20:41:35.885Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd7422275"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "72af5066-efbb-4791-b16c-28d9c5cdb368",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Temperature",
+        "label": "Temperature for multisensor bluetooth",
+        "dataSourceResourceTypeInfo": {
+            "type": "temp"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "temperature",
+        "baseUnit": "°C",
+        "resourceId": "e46fd0ee-4180-4907-8225-d1696f8ec14b",
+        "updatedAt": "2020-09-30T20:41:35.997Z",
+        "createdAt": "2020-09-30T20:41:35.885Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd7422275"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "5ab15442-be6f-48e1-a7e0-191a61a29055",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "RSSI",
+        "description": "for multisensor bluetooth",
+        "label": "Received Signal Strength Indicator",
+        "dataSourceResourceTypeInfo": {
+            "type": "rssi"
+        },
+        "dataSourceType": "ADHOC_SENSORS",
+        "classifier": "signal_strength",
+        "baseUnit": "dBm",
+        "resourceId": "03873f6f-c0dc-419c-86c4-ecd430c04541",
+        "updatedAt": "2020-09-30T20:41:35.993Z",
+        "createdAt": "2020-09-30T20:41:35.889Z",
+        "dataSourceUnitInfo": {
+            "shid": "68297bd38a58e4a15207894d9eaa6558",
+            "sid": "086bd7422275"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "8bfe5602-5f35-45f7-b8bb-3c43d7859432",
+        "dataSourceUnitInfo": {
+            "shid": "5a6baf85c56ecb18347842128473c34f"
+        },
+        "resourceId": "8078d771-d692-422a-af1f-c34e41720f14",
+        "ownerId": "141f0770-3a2e-40eb-9960-cdb92f6e32f3",
+        "name": "Energyhive Hub Data",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER%"
+        },
+        "dataSourceType": "EHSOLAPI",
+        "classifier": "electricity.consumption",
+        "baseUnit": "kWh",
+        "updatedAt": "2021-03-23T17:16:48.349Z",
+        "createdAt": "2021-03-23T17:16:48.349Z",
+        "hasOwnerPermissions": true
+    }
+]

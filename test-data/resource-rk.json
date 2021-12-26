@@ -1,0 +1,107 @@
+[{
+        "active": true,
+        "resourceTypeId": "e3a5db34-6e0c-4221-9653-8d33e27511ba",
+        "ownerId": "b61b2523-60c2-46e7-a85f-993a4b7b3b0e",
+        "name": "electricity consumption",
+        "description": "electicity consumption DCC SM profile reads",
+        "label": "electicity consumption DCC SM profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "ELEC"
+        },
+        "dataSourceType": "AMRAPI",
+        "classifier": "electricity.consumption",
+        "baseUnit": "kWh",
+        "resourceId": "86923d05-3a4a-45dc-930c-a4fe355ef09b",
+        "updatedAt": "2021-10-08T01:55:35.902Z",
+        "createdAt": "2021-10-08T01:55:35.854Z",
+        "dataSourceUnitInfo": {
+            "shid": "c42fae7144ab4c6e972f438188ca2caf"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "78859e39-611e-4e84-a402-1d4460abcb56",
+        "ownerId": "b61b2523-60c2-46e7-a85f-993a4b7b3b0e",
+        "name": "electricity cost",
+        "description": "electicity cost DCC SM profile reads",
+        "label": "electicity cost DCC SM profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "ELEC"
+        },
+        "dataSourceType": "AMRAPI",
+        "classifier": "electricity.consumption.cost",
+        "baseUnit": "pence",
+        "resourceId": "7f8ab3b7-7285-4aaa-a0f4-1233cc52d75c",
+        "updatedAt": "2021-10-08T01:55:35.903Z",
+        "createdAt": "2021-10-08T01:55:35.858Z",
+        "dataSourceUnitInfo": {
+            "shid": "c42fae7144ab4c6e972f438188ca2caf"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "08ab415f-d851-423f-adf4-c2b1e0529e27",
+        "ownerId": "b61b2523-60c2-46e7-a85f-993a4b7b3b0e",
+        "name": "gas consumption",
+        "description": "gas consumption DCC SM profile reads",
+        "label": "gas consumption DCC SM profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "GAS"
+        },
+        "dataSourceType": "AMRAPI",
+        "classifier": "gas.consumption",
+        "baseUnit": "kWh",
+        "resourceId": "5dc089fd-9e70-407b-8fc8-9c65f243d9f0",
+        "updatedAt": "2021-10-08T01:56:13.206Z",
+        "createdAt": "2021-10-08T01:56:13.161Z",
+        "dataSourceUnitInfo": {
+            "shid": "c42fae7144ab4c6e972f438188ca2caf"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "a6b95f41-771d-4bd2-99f4-93ee43c38f5a",
+        "ownerId": "b61b2523-60c2-46e7-a85f-993a4b7b3b0e",
+        "name": "gas cost",
+        "description": "gas cost DCC SM profile reads",
+        "label": "gas cost DCC SM profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "GAS"
+        },
+        "dataSourceType": "AMRAPI",
+        "classifier": "gas.consumption.cost",
+        "baseUnit": "pence",
+        "resourceId": "f16983d0-8c56-4b3b-bb32-38066df6b744",
+        "updatedAt": "2021-10-08T01:56:13.205Z",
+        "createdAt": "2021-10-08T01:56:13.163Z",
+        "dataSourceUnitInfo": {
+            "shid": "c42fae7144ab4c6e972f438188ca2caf"
+        },
+        "hasOwnerPermissions": true
+    },
+    {
+        "active": true,
+        "resourceTypeId": "c1ba7ea0-0a4d-4052-9c95-4a0b7c6946f7",
+        "ownerId": "b61b2523-60c2-46e7-a85f-993a4b7b3b0e",
+        "name": "Electricity consumption",
+        "description": "Minute level electrcicity consumption readings",
+        "label": "Minute level electrcicity consumption reading",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER"
+        },
+        "dataSourceType": "DH",
+        "classifier": "electricity.consumption",
+        "baseUnit": "kWh",
+        "resourceId": "6bf12d5d-c3d9-4332-979c-31e2f9c66326",
+        "updatedAt": "2021-12-20T17:01:10.350Z",
+        "createdAt": "2021-12-20T17:01:10.350Z",
+        "hasOwnerPermissions": true
+    }
+]

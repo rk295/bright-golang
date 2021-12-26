@@ -1,0 +1,34 @@
+[{
+    "clone": false,
+    "active": true,
+    "applicationId": "b0f1b774-a586-4f72-9edd-27ead8aa7a8d",
+    "postalCode": "HA47BE",
+    "resources": [{
+            "resourceId": "86923d05-3a4a-45dc-930c-a4fe355ef09b",
+            "resourceTypeId": "e3a5db34-6e0c-4221-9653-8d33e27511ba",
+            "name": "electricity consumption"
+        },
+        {
+            "resourceId": "7f8ab3b7-7285-4aaa-a0f4-1233cc52d75c",
+            "resourceTypeId": "78859e39-611e-4e84-a402-1d4460abcb56",
+            "name": "electricity cost"
+        },
+        {
+            "resourceId": "f16983d0-8c56-4b3b-bb32-38066df6b744",
+            "resourceTypeId": "a6b95f41-771d-4bd2-99f4-93ee43c38f5a",
+            "name": "gas cost"
+        },
+        {
+            "resourceId": "5dc089fd-9e70-407b-8fc8-9c65f243d9f0",
+            "resourceTypeId": "08ab415f-d851-423f-adf4-c2b1e0529e27",
+            "name": "gas consumption"
+        }
+    ],
+    "ownerId": "b61b2523-60c2-46e7-a85f-993a4b7b3b0e",
+    "name": "DCC Sourced",
+    "veChildren": [],
+    "veTypeId": "6b61c150-34f8-4e1e-9b65-1df2a63611a6",
+    "veId": "663e8017-ed3a-4672-9631-9333eef41857",
+    "updatedAt": "2021-12-20T17:01:11.241Z",
+    "createdAt": "2021-12-20T17:01:11.241Z"
+}]
