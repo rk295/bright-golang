@@ -3,6 +3,7 @@ package bright
 import (
 	"fmt"
 	"os"
+	"time"
 
 	"github.com/sirupsen/logrus"
 )
@@ -47,4 +48,21 @@ func (c *Client) WithLogger(l *logrus.Logger) *Client {
 func (c *Client) WithLevel(level logrus.Level) *Client {
 	c.Logger.SetLevel(level)
 	return c
+}
+
+// NewTestClient returns a dummy client used by the tests
+func NewTestClient() (*Client, error) {
+	return &Client{
+		Logger:   logrus.New(),
+		LogLevel: logrus.TraceLevel,
+		config: &Config{
+			Username: "username",
+			Password: "password",
+		},
+		auth: Auth{
+			token: "token",
+			// Make the expiry 10 days in the future
+			expiry: time.Now().Add(240 * time.Hour),
+		},
+	}, nil
 }

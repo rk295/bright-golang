@@ -4,45 +4,13 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
-	"net/http"
-	"net/url"
+	"io/ioutil"
+	"os"
 	"path"
 	"time"
 
 	"github.com/sirupsen/logrus"
 )
-
-func (c *Client) makeRequest(p string, target interface{}, params ...url.Values) error {
-
-	// Make sure we have a valid token
-	if err := c.performAuth(); err != nil {
-		return err
-	}
-
-	u, err := url.Parse(apiURL)
-	if err != nil {
-		return err
-	}
-	u.Path = path.Join(u.Path, p)
-
-	req, err := http.NewRequest("GET", u.String(), nil)
-	if err != nil {
-		return err
-	}
-
-	q := req.URL.Query()
-	for _, value := range params {
-		for k, v := range value {
-			c.Logger.Debugf("k: %s v: %v", k, v)
-			q.Add(k, v[0])
-		}
-	}
-	req.URL.RawQuery = q.Encode()
-
-	c.Logger.Debugf("making request to %s", req.URL.String())
-
-	return c.doRequest(req, target)
-}
 
 func setLogger(c *Client) {
 	if c.Logger == nil {
@@ -61,33 +29,18 @@ func setLogger(c *Client) {
 	}
 }
 
-func (c *Client) doRequest(r *http.Request, t interface{}) error {
-	r.Header.Set("Content-Type", "application/json")
-	r.Header.Set("applicationId", c.config.applicationID)
-
-	if c.auth.token != "" {
-		r.Header.Set("token", c.auth.token)
+func readTestData(fileName string) (io.ReadCloser, error) {
+	testFile, err := os.Open(path.Join(testDataDir, fileName))
+	if err != nil {
+		return nil, err
 	}
+	return ioutil.NopCloser(testFile), nil
+}
 
-	client := &http.Client{}
-
-	resp, err := client.Do(r)
+func readBodyUnmarshall(body io.ReadCloser, target interface{}) error {
+	bodyBytes, err := io.ReadAll(body)
 	if err != nil {
 		return err
 	}
-	defer resp.Body.Close()
-
-	bodyBytes, err := io.ReadAll(resp.Body)
-	if err != nil {
-		return err
-	}
-	c.Logger.Trace("body: ", string(bodyBytes))
-
-	c.Logger.Debugf("status code: %d", resp.StatusCode)
-	if resp.StatusCode != http.StatusOK {
-		return fmt.Errorf("got status code %d", resp.StatusCode)
-	}
-
-	return json.Unmarshal(bodyBytes, &t)
-
+	return json.Unmarshal(bodyBytes, &target)
 }
