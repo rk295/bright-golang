@@ -1,6 +1,7 @@
 # Go client library for the Bright API
 
 [![Go Reference](https://pkg.go.dev/badge/github.com/rk295/bright-golang.svg)](https://pkg.go.dev/github.com/rk295/bright-golang)
+![example branch parameter](https://github.com/rk295/bright-golang/actions/workflows/go.yml/badge.svg?branch=master)
 
 Package bright-golang is a client for the Bright App energy monitoring API.
 
