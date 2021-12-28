@@ -112,7 +112,7 @@ type Resource struct {
 	Name                       string                     `json:"name"`
 	OwnerID                    string                     `json:"ownerId"`
 	ResourceID                 string                     `json:"resourceId"`
-	ResourceTypeID             TypeIDField                `json:"resourceTypeId"`
+	ResourceTypeID             string                     `json:"resourceTypeId"`
 	UpdatedAt                  time.Time                  `json:"updatedAt"`
 }
 
@@ -130,20 +130,10 @@ type ResourceCurrent struct {
 	Data           [][]int          `json:"data"`
 	Name           string           `json:"name"`
 	ResourceID     string           `json:"resourceId"`
-	ResourceTypeID TypeIDField      `json:"resourceTypeId"`
+	ResourceTypeID string           `json:"resourceTypeId"`
 	Status         string           `json:"status"`
 	Units          ReadingUnitField `json:"units"`
 }
-
-// TypeIDField holds the various type IDs of resources.
-type TypeIDField string
-
-const (
-	ElectricityConsumptionCostResource TypeIDField = "78859e39-611e-4e84-a402-1d4460abcb56"
-	ElectricityConsumptionResource     TypeIDField = "e3a5db34-6e0c-4221-9653-8d33e27511ba"
-	GasConsumptionCostResource         TypeIDField = "a6b95f41-771d-4bd2-99f4-93ee43c38f5a"
-	GasConsumptionResource             TypeIDField = "08ab415f-d851-423f-adf4-c2b1e0529e27"
-)
 
 // VirtualEntities is a slice of VirtualEntities
 type VirtualEntities []VirtualEntity
