@@ -5,25 +5,25 @@ import "fmt"
 // GetElectricityConsumptionResourceID returns the resource ID of the
 // electricity consumption resource.
 func (c *Client) GetElectricityConsumptionResourceID() (string, error) {
-	return c.findByResourceTypeID(ElectricityConsumption)
+	return c.findByClassifier(ElectricityConsumption)
 }
 
 // GetGasConsumptionResourceID returns the resource ID of the gas consumption
 // resource.
 func (c *Client) GetGasConsumptionResourceID() (string, error) {
-	return c.findByResourceTypeID(GasConsumption)
+	return c.findByClassifier(GasConsumption)
 }
 
 // GetElectricityConsumptionCostResourceID returns the resource ID of the
 // electricity consumption cost resource.
 func (c *Client) GetElectricityConsumptionCostResourceID() (string, error) {
-	return c.findByResourceTypeID(ElectricityConsumptionCost)
+	return c.findByClassifier(ElectricityConsumptionCost)
 }
 
 // GetGasConsumptionCostResourceID returns the resource ID of the gas
 // consumption cost resource.
 func (c *Client) GetGasConsumptionCostResourceID() (string, error) {
-	return c.findByResourceTypeID(GasConsumptionCost)
+	return c.findByClassifier(GasConsumptionCost)
 }
 
 // GetElectricityCurrent returns a ResourceCurrent for the electricity
@@ -49,14 +49,14 @@ func (c *Client) GetGasCurrentWatts() (int, error) {
 	return c.getCurrentWatts(GasConsumption)
 }
 
-func (c *Client) findByResourceTypeID(cl ClassifierField) (string, error) {
+func (c *Client) findByClassifier(cl ClassifierField) (string, error) {
 	res, err := c.GetResources()
 	if err != nil {
 		return "", err
 	}
 
 	for _, r := range res {
-		if r.Classifier == cl {
+		if r.Classifier == cl && r.DataSourceResourceTypeInfo.Unit == KWH {
 			return r.ResourceID, nil
 		}
 	}
@@ -64,7 +64,7 @@ func (c *Client) findByResourceTypeID(cl ClassifierField) (string, error) {
 }
 
 func (c *Client) getCurrent(cl ClassifierField) (ResourceCurrent, error) {
-	resourceID, err := c.findByResourceTypeID(cl)
+	resourceID, err := c.findByClassifier(cl)
 	if err != nil {
 		return ResourceCurrent{}, err
 	}
