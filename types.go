@@ -241,9 +241,9 @@ type Protocol struct {
 }
 
 type HardwareIds struct {
-	Eui          string `json:"EUI,omitempty"`
-	Mac          string `json:"MAC,omitempty"`
-	Mpan         string `json:"MPAN,omitempty"`
-	Mprn         string `json:"MPRN,omitempty"`
+	EUI          string `json:"EUI,omitempty"`
+	MAC          string `json:"MAC,omitempty"`
+	MPAN         string `json:"MPAN,omitempty"`
+	MPRN         string `json:"MPRN,omitempty"`
 	SerialNumber string `json:"serialNumber,omitempty"`
 }
