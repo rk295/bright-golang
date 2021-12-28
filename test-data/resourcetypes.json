@@ -1,0 +1,1272 @@
+[{
+        "dataSourceType": "ADHOC",
+        "active": true,
+        "resourceTypeId": "672b8071-44ff-4f23-bca2-f50c6a3ddd02",
+        "name": "Smart Meter, gas consumption",
+        "label": "gas consumption",
+        "description": "adhoc gas consumption",
+        "units": {
+            "readings": "kWh"
+        },
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "gas.consumption",
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "20dc3d46-f07d-4d61-af52-b0ac148206bf",
+        "name": "Clamp Transmitter, export channel",
+        "label": "NAPI  PWER_EXPORT",
+        "description": "NAPI resourcetype, PWER_EXPORT channel",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER_EXPORT"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.export",
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "c58f1dd0-b045-4aa7-9635-3d21035c7b9f",
+        "name": "Tank Level",
+        "label": "Tank Level OT4C",
+        "description": "Tank monitor reading of space between top of tank and liquid",
+        "storage": [{
+            "fields": [{
+                "fieldName": "LEVEL",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2017-12-01T00:00:00+00:00"
+        }],
+        "classifier": "oil.level",
+        "dataSourceResourceTypeInfo": {
+            "type": "OT4C"
+        }
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "9b4ff990-60db-4d6c-9a0c-ab02bdd62fd3",
+        "name": "Clamp Transmitter, generation channel",
+        "label": "papi  PWER_GAC",
+        "description": "papi resourcetype, PWER_GAC channel",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER_GAC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.generation",
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "8c8e1082-5128-4df0-9abf-dc22e70f3b46",
+        "name": "Tank Battery",
+        "label": "Tank RSS OT6C",
+        "description": "Tank sensor battery level",
+        "storage": [{
+            "fields": [{
+                "fieldName": "BATLEVEL",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2017-12-01T00:00:00+00:00"
+        }],
+        "classifier": "battery",
+        "dataSourceResourceTypeInfo": {
+            "type": "OT6C"
+        }
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "b5791d9a-6f58-4372-bae4-ae79d1cc0712",
+        "name": "Clamp Transmitter, electricity power individual",
+        "label": "papi PWER individual OT, PWER_1",
+        "description": "papi resourcetype, PWER channel for individual PI clamp transmitter sensors",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER_1"
+        },
+        "classifier": "electricity.consumption",
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "34b43bd1-d724-4c3f-954e-e74b5bbdcc7e",
+        "name": "Relative Humidity",
+        "label": "relative humidity OT68",
+        "description": "papi resourcetype, relative humidity OT",
+        "dataSourceResourceTypeInfo": {
+            "type": "OT68"
+        },
+        "classifier": "relative_humidity",
+        "storage": [{
+            "fields": [{
+                "fieldName": "OT68",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "baseUnit": "%"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "bb0b2429-7776-44da-a3b4-f87ce3a47dd0",
+        "name": "Clamp Transmitter, electricity power",
+        "label": "papi PWER  OT",
+        "description": "papi resourcetype, PWER channel for clamp transmitter sensors",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER"
+        },
+        "classifier": "electricity.consumption",
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "1001bf11-9813-4753-91f1-84b841909697",
+        "name": "Tank Temperature",
+        "label": "Tank Temperature OT74",
+        "description": "Tank temperature reading",
+        "storage": [{
+            "fields": [{
+                "fieldName": "TEMP",
+                "datatype": "fixedpoint(1)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2017-12-01T00:00:00+00:00"
+        }],
+        "classifier": "temperature",
+        "dataSourceResourceTypeInfo": {
+            "type": "OT74"
+        },
+        "baseUnit": "C"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "23e9084a-19d4-4849-ab78-bd22753457f5",
+        "name": "Clamp Transmitter, electricity power individual 2",
+        "label": "papi PWER individual OT, PWER_2",
+        "description": "papi resourcetype, PWER channel for individual PI clamp transmitter sensors",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER_2"
+        },
+        "classifier": "electricity.consumption",
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "d4181ac4-f182-412e-9106-3b298e0d4c62",
+        "name": "Clamp Transmitter, import channel",
+        "label": "papi  PWER_IMPORT",
+        "description": "papi resourcetype, PWER_IMPORT channel",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER_IMPORT"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.import",
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "ADHOC",
+        "active": true,
+        "resourceTypeId": "ea02304a-2820-4ea0-8399-f1d1b430c3a0",
+        "name": "Smart Meter, electricity consumption",
+        "label": "electricity consumption",
+        "description": "adhoc electricity consumption",
+        "units": {
+            "instant": "W",
+            "current": "W",
+            "readings": "kWh"
+        },
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.consumption",
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "5a0ac248-ab63-4bd7-9788-a9fa26b85c1a",
+        "name": "Temperature",
+        "label": "Temperature OT74",
+        "description": "papi resourcetype, temperature OT",
+        "dataSourceResourceTypeInfo": {
+            "type": "OT74"
+        },
+        "classifier": "temperature",
+        "storage": [{
+            "fields": [{
+                "fieldName": "OT74",
+                "datatype": "fixedpoint(2)",
+                "negative": true
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "baseUnit": "C"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "45b6b096-1a23-4584-9a58-9631ea1f3274",
+        "name": "Clamp Transmitter, consumption channel",
+        "label": "papi  PWER",
+        "description": "papi resourcetype, PWER channel",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.consumption",
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "ADHOC",
+        "active": true,
+        "resourceTypeId": "b4158501-a678-484a-837a-874194d3bd48",
+        "name": "Smart Meter, electricity cost",
+        "label": "electricity cost",
+        "description": "adhoc electricity cost",
+        "units": {
+            "readings": "pence"
+        },
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.consumption.cost",
+        "baseUnit": "pence"
+    },
+    {
+        "dataSourceType": "ADHOC",
+        "active": true,
+        "resourceTypeId": "32d9821b-34fd-46d1-9ba1-56259afd4734",
+        "name": "Smart Meter, gas cost",
+        "label": "gas cost",
+        "description": "adhoc gas cost",
+        "units": {
+            "readings": "pence"
+        },
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "gas.consumption.cost",
+        "baseUnit": "pence"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "7f464f1b-14ad-48a0-bc9d-0e464e9d6c36",
+        "name": "Clamp Transmitter, diversion channel",
+        "label": "papi  PWER_IMM",
+        "description": "papi resourcetype, PWER_IMM channel",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER_IMM"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.diversion",
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "resourceTypeId": "9ec2bd19-bfa3-430b-9f08-9550c8cd4bbe",
+        "name": "Clamp Transmitter, electricity power individual 3",
+        "label": "papi PWER individual OT, PWER_3",
+        "description": "papi resourcetype, PWER channel for individual PI clamp transmitter sensors",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER_3"
+        },
+        "classifier": "electricity.consumption",
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "name": "Power Cost",
+        "label": "papi PWER  OT cost",
+        "description": "papi resourcetype, PWER cost for clamp transmitter sensors",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER"
+        },
+        "classifier": "electricity.consumption.cost",
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "b3c80261-f9d3-4453-a6e7-5fd02e89fc67",
+        "baseUnit": "pence"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "name": "Power 1 Cost",
+        "label": "papi PWER_1  OT cost",
+        "description": "papi resourcetype, PWER_1 cost channel for clamp transmitter sensors",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER_1"
+        },
+        "classifier": "electricity.consumption.cost",
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "c58b4039-3cdf-425a-873d-f9e82d8c4009",
+        "baseUnit": "pence"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "name": "Power 2 Cost",
+        "label": "papi PWER_2  OT cost",
+        "description": "papi resourcetype, PWER_2 cost (DEMO) channel for clamp transmitter sensors",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER_2"
+        },
+        "classifier": "electricity.consumption.cost",
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "b8a8b8ca-ee59-4fc9-97c1-77dfa6bd9b46",
+        "baseUnit": "pence"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "name": "Power 3 Cost",
+        "label": "papi PWER_3  OT cost",
+        "description": "papi resourcetype, PWER_3 cost channel for clamp transmitter sensors",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER_3"
+        },
+        "classifier": "electricity.consumption.cost",
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "177a0707-154b-4666-be59-2a5eff88a160",
+        "baseUnit": "pence"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "name": "Illuminance",
+        "label": "Illuminance OT49",
+        "description": "papi resourcetype, Illuminance OT",
+        "dataSourceResourceTypeInfo": {
+            "type": "OT49"
+        },
+        "classifier": "illuminance",
+        "storage": [{
+            "fields": [{
+                "fieldName": "OT49",
+                "datatype": "fixedpoint(2)",
+                "negative": true
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "61af065b-d737-44d2-b30a-f9f1a3bd1b0f",
+        "baseUnit": "lx"
+    },
+    {
+        "dataSourceType": "POINTSYS",
+        "active": true,
+        "name": "Competition Points",
+        "description": "Points that are kept as a resource to be saved in a Virtual Entity",
+        "storage": [{
+            "fields": [{
+                    "fieldName": "value",
+                    "datatype": "interger",
+                    "negative": true
+                },
+                {
+                    "fieldName": "value",
+                    "datatype": "object",
+                    "negative": false
+                }
+            ],
+            "type": "timeseries",
+            "sampling": "irregular"
+        }],
+        "classifier": "points.competition",
+        "resourceTypeId": "9d90695b-2173-48af-9e1c-c53a4badc659"
+    },
+    {
+        "dataSourceType": "EHSOLAPI",
+        "active": true,
+        "name": "Clamp Transmitter, electricity power",
+        "label": "energyhive efergy PWER",
+        "description": "resourcetype for rfergy protocol clamp transmitters",
+        "dataSourceResourceTypeInfo": {
+            "type": "PWER"
+        },
+        "classifier": "electricity.consumption",
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2012-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "7969e3c4-66cf-4568-be29-4913023faa7e",
+        "baseUnit": "kWh"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "active import",
+        "label": "electricity energy from active import power",
+        "description": "electricity energy from active import power",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.import.active",
+        "baseUnit": "kWh",
+        "resourceTypeId": "4fb84cb6-5af4-46ae-ba11-8390703c34c4"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "active export",
+        "label": "electricity energy from active export power",
+        "description": "electricity energy from active export power",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.export.active",
+        "baseUnit": "kWh",
+        "resourceTypeId": "eab89449-11d0-4887-87dd-968be8379d68"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "reactive export",
+        "label": "electricity energy from reactive export power",
+        "description": "electricity energy from reactive export power",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.export.reactive",
+        "baseUnit": "kVAh",
+        "resourceTypeId": "dabab374-5f4e-4a7d-bba9-2e9b88dc2426"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "reactive import",
+        "label": "electricity energy from reactive import power",
+        "description": "electricity energy from reactive import power",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.import.reactive",
+        "baseUnit": "kVAh",
+        "resourceTypeId": "33a9a4a8-d205-4949-b642-b3302d5bcc86"
+    },
+    {
+        "dataSourceType": "ADHOC_PREDICTION",
+        "active": true,
+        "name": "electricity forecast",
+        "label": "electricity forecast",
+        "description": "forecast for electricity consumption",
+        "dataSourceResourceTypeInfo": {
+            "range": "composite",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.forecast",
+        "baseUnit": "kWh",
+        "resourceTypeId": "67d6ac14-8e20-4f31-b7c2-f0688193659f"
+    },
+    {
+        "dataSourceType": "ADHOC_PREDICTION",
+        "active": true,
+        "name": "gas forecast",
+        "label": "gas forecast",
+        "description": "forecast for gas consumption",
+        "dataSourceResourceTypeInfo": {
+            "range": "composite",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "gas.forecast",
+        "baseUnit": "kWh",
+        "resourceTypeId": "7b02e596-0222-40ee-84be-c18b17c0915d"
+    },
+    {
+        "dataSourceType": "HBRS",
+        "active": true,
+        "name": "Heat energy Diehl",
+        "dataSourceResourceTypeInfo": {
+            "type": "CAMHEATPWER"
+        },
+        "classifier": "heat.energy",
+        "storage": [{
+            "fields": [{
+                "fieldName": "CAMHEATPWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "irregular",
+            "start": "2012-01-01T00:00:00+00:00"
+        }],
+        "resourceTypeId": "ca887890-79d1-4a99-988f-3545b34a9375"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "electricity consumption",
+        "label": "electicity consumption DCC SM profile reads",
+        "description": "electicity consumption DCC SM profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.consumption",
+        "baseUnit": "kWh",
+        "resourceTypeId": "e3a5db34-6e0c-4221-9653-8d33e27511ba"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "electricity cost",
+        "label": "electicity cost DCC SM profile reads",
+        "description": "electicity cost DCC SM profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.consumption.cost",
+        "baseUnit": "pence",
+        "resourceTypeId": "78859e39-611e-4e84-a402-1d4460abcb56"
+    },
+    {
+        "dataSourceType": "ADHOC",
+        "active": true,
+        "name": "Smart Meter, water consumption",
+        "label": "water consumption",
+        "description": "adhoc water consumption",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "WATER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "water.consumption",
+        "resourceTypeId": "17ccf7b8-d887-4029-bc97-a8a70900a738"
+    },
+    {
+        "dataSourceType": "ADHOC",
+        "active": true,
+        "name": "water cost",
+        "label": "water cost",
+        "baseUnit": "pence",
+        "description": "adhoc water cost",
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "WATER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "water.consumption.cost",
+        "resourceTypeId": "b9684b04-4b78-4d20-8c6c-e0119e7e0367"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "electricity consumption",
+        "label": "electicity consumption AMR profile reads",
+        "description": "electicity consumption AMR profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.consumption",
+        "baseUnit": "kWh",
+        "resourceTypeId": "92d6d2fb-26bc-4ada-9698-9f678ecdfdcf"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "electricity cost",
+        "label": "electicity cost DCC SM profile reads",
+        "description": "electicity cost DCC SM profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.consumption.cost",
+        "baseUnit": "pence",
+        "resourceTypeId": "ba9d973a-ffc8-4f29-98f7-0fe36dbbc136"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "gas consumption",
+        "label": "gas consumption DCC SM profile reads",
+        "description": "gas consumption DCC SM profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "GAS",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "gas.consumption",
+        "baseUnit": "kWh",
+        "resourceTypeId": "08ab415f-d851-423f-adf4-c2b1e0529e27"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "gas cost",
+        "label": "gas cost DCC SM profile reads",
+        "description": "gas cost DCC SM profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "gas.consumption.cost",
+        "baseUnit": "pence",
+        "resourceTypeId": "a6b95f41-771d-4bd2-99f4-93ee43c38f5a"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "gas consumption",
+        "label": "gas consumption AMR profile reads",
+        "description": "gas consumption AMR profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "GAS",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "gas.consumption",
+        "baseUnit": "kWh",
+        "resourceTypeId": "5bc20a07-f50a-4b7b-931f-836a9e6188e0"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "gas cost",
+        "label": "gas cost AMR profile reads",
+        "description": "gas cost AMR profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "GAS",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "gas.consumption.cost",
+        "baseUnit": "pence",
+        "resourceTypeId": "972c95ba-9c99-4461-95fa-9d072eaa20af"
+    },
+    {
+        "dataSourceType": "DH",
+        "active": true,
+        "name": "Heat energy cost",
+        "dataSourceResourceTypeInfo": {
+            "type": "HEATPWER",
+            "isCost": true
+        },
+        "classifier": "heat.energy.cost",
+        "storage": [{
+            "fields": [{
+                "fieldName": "CAMHEATPWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "irregular",
+            "start": "2012-01-01T00:00:00+00:00"
+        }],
+        "resourceTypeId": "dd272457-d812-4bfc-b25e-811a4a7207c6"
+    },
+    {
+        "dataSourceType": "DH",
+        "active": true,
+        "name": "Heat energy cost",
+        "dataSourceResourceTypeInfo": {
+            "type": "HEATKWH",
+            "isCost": true
+        },
+        "classifier": "heat.energy.cost",
+        "storage": [{
+            "fields": [{
+                "fieldName": "CAMHEATPWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "irregular",
+            "start": "2012-01-01T00:00:00+00:00"
+        }],
+        "resourceTypeId": "9cdc3482-3f9c-4afc-b59d-bcfa098b19b6"
+    },
+    {
+        "dataSourceType": "DH",
+        "active": true,
+        "name": "Aggregated DH energy summary",
+        "label": "heat energy summary",
+        "description": "heat energy summary",
+        "dataSourceResourceTypeInfo": {
+            "type": "HEAT",
+            "method": "ENERGY_SUMMARY",
+            "unit": "kWh"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "fc143f87-221a-4294-9fde-5cb871df6bb9",
+        "classifier": "group.heat.summary"
+    },
+    {
+        "dataSourceType": "DH",
+        "active": true,
+        "name": "Aggregated DH energy consumption over a period of time",
+        "label": "Heat consumption over a period of time",
+        "description": "heat energy summary",
+        "dataSourceResourceTypeInfo": {
+            "type": "HEAT",
+            "method": "CONSUMPTION_OVER_TIME",
+            "unit": "kWh"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "00d5ea56-6895-49b2-a6d9-85ad2e1b6547",
+        "classifier": "group.heat.consumption"
+    },
+    {
+        "dataSourceType": "CORE3_ADHOC",
+        "active": true,
+        "name": "Aggregated SM energy consumption over a period of time",
+        "label": "SM consumption over a period of time",
+        "description": "energy summary (electricity gas)",
+        "dataSourceResourceTypeInfo": {
+            "type": "ELEC",
+            "method": "CONSUMPTION_OVER_TIME",
+            "unit": "kWh"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "e3f4fc6b-3505-4f3a-a989-d5ddb6210aed",
+        "classifier": "group.energy.consumption"
+    },
+    {
+        "dataSourceType": "CORE3_ADHOC",
+        "active": true,
+        "name": "Aggregated SM energy summary",
+        "label": "energy summary",
+        "description": "energy summary (electricity gas)",
+        "classifier": "group.energy.summary",
+        "dataSourceResourceTypeInfo": {
+            "type": "ELEC",
+            "method": "ENERGY_SUMMARY",
+            "unit": "kWh"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "2bac239e-32c6-4518-a1b2-6a6e855c0dfa"
+    },
+    {
+        "dataSourceType": "CORE3_ADHOC",
+        "active": true,
+        "name": "Aggregated SM energy summary of groups",
+        "label": "energy summary groups",
+        "description": "energy summary groups (electricity gas)",
+        "classifier": "groups.energy.summary",
+        "dataSourceResourceTypeInfo": {
+            "type": "ELEC",
+            "method": "ENERGY_SUMMARY_GROUPS",
+            "unit": "kWh"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "resourceTypeId": "52440667-0e66-485d-bece-abaed22f374f"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "electricity consumption",
+        "label": "electicity consumption Secure profile reads",
+        "description": "electicity consumption Secure profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.consumption",
+        "baseUnit": "kWh",
+        "resourceTypeId": "0bb1fb70-c443-416f-843b-c166dcff0a87"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "electricity cost",
+        "label": "electicity cost Secure profile reads",
+        "description": "electicity cost Secure profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "ELEC"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "PWER",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "electricity.consumption.cost",
+        "baseUnit": "pence",
+        "resourceTypeId": "55326886-dbc3-4840-ae24-8cdbf51a8485"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "gas consumption",
+        "label": "gas consumption Secure profile reads",
+        "description": "gas consumption Secure profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "kWh",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "GAS",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "gas.consumption",
+        "baseUnit": "kWh",
+        "resourceTypeId": "f6c3da95-f81a-4640-ac20-cfd82b88412e"
+    },
+    {
+        "dataSourceType": "AMRAPI",
+        "active": true,
+        "name": "gas cost",
+        "label": "gas cost Secure profile reads",
+        "description": "gas cost Secure profile reads",
+        "dataSourceResourceTypeInfo": {
+            "unit": "pence",
+            "type": "GAS"
+        },
+        "storage": [{
+            "fields": [{
+                "fieldName": "GAS",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "classifier": "gas.consumption.cost",
+        "baseUnit": "pence",
+        "resourceTypeId": "5c4bbe04-1fee-4701-9366-cb37285167f5"
+    },
+    {
+        "dataSourceType": "DATA_SOURCE_IDENTIFIER",
+        "active": true,
+        "name": "electricity energy",
+        "description": "The storage mechanism for saving electricity energy.",
+        "classifier": "electricity.consumption",
+        "storage": [{
+            "fields": [{
+                "fieldName": "GEN",
+                "datatype": "fixedpoint(2)",
+                "negative": false
+            }],
+            "type": "timeseries",
+            "sampling": "regular",
+            "start": "2014-01-06T00:00:00+00:00"
+        }],
+        "dataSourceResourceTypeInfo": "ELEC",
+        "resourceTypeId": "6f1e36cc-c2c2-4efb-ae9a-c32024cc1c35"
+    }
+]

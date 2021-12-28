@@ -28,13 +28,7 @@ func TestGetResource(t *testing.T) {
 		r, err := readTestData(file)
 		assert.Nil(t, err)
 
-		mock.GetDoFunc = func(*http.Request) (*http.Response, error) {
-			return &http.Response{
-				StatusCode: 200,
-				Body:       r,
-			}, nil
-		}
-
+		mock.GetDoFunc = mock.DefaultDo(r, http.StatusOK)
 		resp, err := c.GetResources()
 		assert.Nil(t, err)
 		assert.NotNil(t, resp)

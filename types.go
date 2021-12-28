@@ -8,43 +8,43 @@ import (
 
 // Auth holds the authentication token and expiry time.
 type Auth struct {
-	token  string
 	expiry time.Time
+	token  string
 }
 
 // AuthRequest represents a request to the Bright API to authenticate ourselves.
 type AuthRequest struct {
-	Username      string `json:"username"`
-	Password      string `json:"password"`
 	ApplicationID string `json:"applicationId"`
+	Password      string `json:"password"`
+	Username      string `json:"username"`
 }
 
 // AuthResponse holds the response from an authentication response.
 type AuthResponse struct {
-	Valid                   bool          `json:"valid"`
-	Token                   string        `json:"token"`
-	Exp                     int64         `json:"exp"`
-	UserGroups              []interface{} `json:"userGroups"`
-	FunctionalGroupAccounts []interface{} `json:"functionalGroupAccounts"`
 	AccountID               string        `json:"accountId"`
+	Exp                     int64         `json:"exp"`
+	FunctionalGroupAccounts []interface{} `json:"functionalGroupAccounts"`
 	IsTempAuth              bool          `json:"isTempAuth"`
 	Name                    string        `json:"name"`
+	Token                   string        `json:"token"`
+	UserGroups              []interface{} `json:"userGroups"`
+	Valid                   bool          `json:"valid"`
 }
 
 // Config represents the configuration of the client. Both Username and Password
 // must be set, or if using NewClientFromEnv they will be set for you using the
 // os environment.
 type Config struct {
-	Username      string
-	Password      string
 	applicationID string
+	Password      string
+	Username      string
 }
 
 // Client represents a bright API client. You can optionally add an existing
 // logger with WithLogger() and set its level with WithLevel().
 type Client struct {
-	config   *Config
 	auth     Auth
+	config   *Config
 	Logger   *logrus.Logger
 	LogLevel logrus.Level
 }
@@ -60,19 +60,14 @@ const (
 	GasConsumptionCost         ClassifierField = "gas.consumption.cost"
 )
 
-// DataSourceUnitField is the type used for the Units returned as part of a Resource.
-type DataSourceUnitField string
-
-const (
-	KwH   DataSourceUnitField = "kWh"
-	Pence DataSourceUnitField = "pence"
-)
-
 // DataSourceResourceTypeInfo holds the Unit and Type of the Data Source
 // Resource returned by the API.
 type DataSourceResourceTypeInfo struct {
-	Unit DataSourceUnitField `json:"unit"`
-	Type TypeField           `json:"type"`
+	IsCost bool   `json:"isCost,omitempty"`
+	Method string `json:"method,omitempty"`
+	Range  string `json:"range,omitempty"`
+	Type   string `json:"type,omitempty"`
+	Unit   string `json:"unit,omitempty"`
 }
 
 // DataSourceUnitInfo holds Data Source unit info.
@@ -83,21 +78,21 @@ type DataSourceUnitInfo struct {
 // Query represents a query to the readings API.
 type Query struct {
 	From     string `json:"from"`
-	To       string `json:"to"`
-	Period   string `json:"period"`
 	Function string `json:"function"`
+	Period   string `json:"period"`
+	To       string `json:"to"`
 }
 
 // Reading represents a single reading returned from the API.
 type Reading struct {
-	Status         string           `json:"status"`
-	Name           string           `json:"name"`
-	ResourceTypeID string           `json:"resourceTypeId"`
-	ResourceID     string           `json:"resourceId"`
-	Query          Query            `json:"query"`
-	Data           [][]float32      `json:"data"`
-	Units          ReadingUnitField `json:"units"`
 	Classifier     ClassifierField  `json:"classifier"`
+	Data           [][]float32      `json:"data"`
+	Name           string           `json:"name"`
+	Query          Query            `json:"query"`
+	ResourceID     string           `json:"resourceId"`
+	ResourceTypeID string           `json:"resourceTypeId"`
+	Status         string           `json:"status"`
+	Units          ReadingUnitField `json:"units"`
 }
 
 // Resources is a slice of Resources.
@@ -106,58 +101,48 @@ type Resources []Resource
 // Resource represents a resource as defined by the API.
 type Resource struct {
 	Active                     bool                       `json:"active"`
-	ResourceTypeID             TypeIDField                `json:"resourceTypeId"`
-	OwnerID                    string                     `json:"ownerId"`
-	Name                       string                     `json:"name"`
+	BaseUnit                   string                     `json:"baseUnit"`
+	Classifier                 ClassifierField            `json:"classifier"`
+	CreatedAt                  time.Time                  `json:"createdAt"`
+	DataSourceResourceTypeInfo DataSourceResourceTypeInfo `json:"dataSourceResourceTypeInfo,omitempty"`
+	DataSourceType             string                     `json:"dataSourceType"`
+	DataSourceUnitInfo         DataSourceUnitInfo         `json:"dataSourceUnitInfo"`
 	Description                string                     `json:"description"`
 	Label                      string                     `json:"label"`
-	DataSourceResourceTypeInfo DataSourceResourceTypeInfo `json:"dataSourceResourceTypeInfo"`
-	DataSourceType             string                     `json:"dataSourceType"`
-	Classifier                 ClassifierField            `json:"classifier"`
-	BaseUnit                   DataSourceUnitField        `json:"baseUnit"`
+	Name                       string                     `json:"name"`
+	OwnerID                    string                     `json:"ownerId"`
 	ResourceID                 string                     `json:"resourceId"`
+	ResourceTypeID             TypeIDField                `json:"resourceTypeId"`
 	UpdatedAt                  time.Time                  `json:"updatedAt"`
-	CreatedAt                  time.Time                  `json:"createdAt"`
-	DataSourceUnitInfo         DataSourceUnitInfo         `json:"dataSourceUnitInfo"`
 }
 
 // ReadingUnitField represents all the possible units the API can return.
 type ReadingUnitField string
 
 const (
-	Watts       ReadingUnitField = "W"
 	MetersCubed ReadingUnitField = "m3"
+	Watts       ReadingUnitField = "W"
 )
 
 // Resourcecurrent represents the current (as in now) usage of the Resource.
 type ResourceCurrent struct {
-	Status         string           `json:"status"`
-	Name           string           `json:"name"`
-	ResourceTypeID TypeIDField      `json:"resourceTypeId"`
-	ResourceID     string           `json:"resourceId"`
-	Data           [][]int          `json:"data"`
-	Units          ReadingUnitField `json:"units"`
 	Classifier     ClassifierField  `json:"classifier"`
+	Data           [][]int          `json:"data"`
+	Name           string           `json:"name"`
+	ResourceID     string           `json:"resourceId"`
+	ResourceTypeID TypeIDField      `json:"resourceTypeId"`
+	Status         string           `json:"status"`
+	Units          ReadingUnitField `json:"units"`
 }
 
 // TypeIDField holds the various type IDs of resources.
 type TypeIDField string
 
 const (
-	ElectricityConsumptionResource     TypeIDField = "e3a5db34-6e0c-4221-9653-8d33e27511ba"
 	ElectricityConsumptionCostResource TypeIDField = "78859e39-611e-4e84-a402-1d4460abcb56"
-	GasConsumptionResource             TypeIDField = "08ab415f-d851-423f-adf4-c2b1e0529e27"
+	ElectricityConsumptionResource     TypeIDField = "e3a5db34-6e0c-4221-9653-8d33e27511ba"
 	GasConsumptionCostResource         TypeIDField = "a6b95f41-771d-4bd2-99f4-93ee43c38f5a"
-)
-
-// TypeField is the type used for the type in the DataSourceResourceTypeInfo
-// struct.
-type TypeField string
-
-const (
-	Gas         TypeField = "GAS"
-	Electricity TypeField = "ELEC"
-	Power       TypeField = "PWER"
+	GasConsumptionResource             TypeIDField = "08ab415f-d851-423f-adf4-c2b1e0529e27"
 )
 
 // VirtualEntities is a slice of VirtualEntities
@@ -165,23 +150,100 @@ type VirtualEntities []VirtualEntity
 
 // VirtualEntity represents a single Virtual Entity returned by the API.
 type VirtualEntity struct {
-	Clone         bool          `json:"clone"`
 	Active        bool          `json:"active"`
 	ApplicationID string        `json:"applicationId"`
+	Clone         bool          `json:"clone"`
+	CreatedAt     time.Time     `json:"createdAt"`
+	Name          string        `json:"name"`
+	OwnerID       string        `json:"ownerId"`
 	PostalCode    string        `json:"postalCode"`
 	Resources     []VEResources `json:"resources"`
-	OwnerID       string        `json:"ownerId"`
-	Name          string        `json:"name"`
-	VeChildren    []interface{} `json:"veChildren"`
-	VeTypeID      string        `json:"veTypeId"`
-	VeID          string        `json:"veId"`
 	UpdatedAt     time.Time     `json:"updatedAt"`
-	CreatedAt     time.Time     `json:"createdAt"`
+	VeChildren    []interface{} `json:"veChildren"`
+	VeID          string        `json:"veId"`
+	VeTypeID      string        `json:"veTypeId"`
 }
 
 // VEResources represents the Resources returned as part of a VirtualEntity.
 type VEResources struct {
+	Name           string `json:"name"`
 	ResourceID     string `json:"resourceId"`
 	ResourceTypeID string `json:"resourceTypeId"`
-	Name           string `json:"name"`
+}
+
+// ResourceTypes
+type ResourceTypes []ResourceType
+
+// ResourceType represents a single resource type.
+// DataSourceResourceTypeInfo has to be an interface because one of the
+// returned fields is a string not a object that can be Unmarshalled into
+// DataSourceResourceTypeInfo
+type ResourceType struct {
+	Active                     bool              `json:"active"`
+	BaseUnit                   string            `json:"baseUnit,omitempty"`
+	Classifier                 ClassifierField   `json:"classifier,omitempty"`
+	DataSourceResourceTypeInfo interface{}       `json:"dataSourceResourceTypeInfo"`
+	DataSourceType             string            `json:"dataSourceType"`
+	Description                string            `json:"description"`
+	Label                      string            `json:"label"`
+	Name                       string            `json:"name"`
+	ResourceTypeID             string            `json:"resourceTypeId"`
+	Storage                    []Storage         `json:"storage"`
+	Units                      ResourceTypeUnits `json:"units,omitempty"`
+}
+
+type ResourceTypeUnits struct {
+	Readings string `json:"readings"`
+}
+
+type Fields struct {
+	Datatype  string `json:"datatype"`
+	FieldName string `json:"fieldName"`
+	Negative  bool   `json:"negative"`
+}
+
+type Storage struct {
+	Fields   []Fields  `json:"fields"`
+	Sampling string    `json:"sampling"`
+	Start    time.Time `json:"start"`
+	Type     string    `json:"type"`
+}
+
+// Devices is a slice of Device
+type Devices []Device
+
+// Devices represents a single device know to the API
+type Device struct {
+	Active           bool        `json:"active"`
+	CreatedAt        time.Time   `json:"createdAt"`
+	Description      string      `json:"description"`
+	DeviceID         string      `json:"deviceId"`
+	DeviceTypeID     string      `json:"deviceTypeId"`
+	HardwareID       string      `json:"hardwareId"`
+	HardwareIDNames  []string    `json:"hardwareIdNames"`
+	HardwareIds      HardwareIds `json:"hardwareIds,omitempty"`
+	OwnerID          string      `json:"ownerId"`
+	ParentHardwareID []string    `json:"parentHardwareId"`
+	Protocol         Protocol    `json:"protocol"`
+	Tags             []string    `json:"tags"`
+	UpdatedAt        time.Time   `json:"updatedAt"`
+}
+
+type Sensors struct {
+	ProtocolID     string `json:"protocolId"`
+	ResourceID     string `json:"resourceId"`
+	ResourceTypeID string `json:"resourceTypeId"`
+}
+
+type Protocol struct {
+	Protocol string    `json:"protocol"`
+	Sensors  []Sensors `json:"sensors"`
+}
+
+type HardwareIds struct {
+	Eui          string `json:"EUI,omitempty"`
+	Mac          string `json:"MAC,omitempty"`
+	Mpan         string `json:"MPAN,omitempty"`
+	Mprn         string `json:"MPRN,omitempty"`
+	SerialNumber string `json:"serialNumber,omitempty"`
 }

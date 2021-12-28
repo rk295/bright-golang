@@ -13,10 +13,10 @@ func init() {
 	restClient = &mock.MockClient{}
 }
 
-func TestGetVirtualEntities(t *testing.T) {
+func TestGetDevices(t *testing.T) {
 
 	testFiles := []string{
-		"virtualentities-rk.json",
+		"devices.json",
 	}
 
 	c, err := NewTestClient()
@@ -28,7 +28,7 @@ func TestGetVirtualEntities(t *testing.T) {
 		assert.Nil(t, err)
 
 		mock.GetDoFunc = mock.DefaultDo(r, http.StatusOK)
-		resp, err := c.GetVEs()
+		resp, err := c.GetDevices()
 		assert.Nil(t, err)
 		assert.NotNil(t, resp)
 	}

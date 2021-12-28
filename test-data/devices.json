@@ -1,0 +1,118 @@
+[{
+        "protocol": {
+            "protocol": "dcc",
+            "sensors": [{
+                    "resourceTypeId": "e3a5db34-6e0c-4221-9653-8d33e27511ba",
+                    "protocolId": "0702:04:00",
+                    "resourceId": "86923d05-3a4a-45dc-930c-a4fe355ef09b"
+                },
+                {
+                    "resourceTypeId": "78859e39-611e-4e84-a402-1d4460abcb56",
+                    "protocolId": "0702:04:00",
+                    "resourceId": "7f8ab3b7-7285-4aaa-a0f4-1233cc52d75c"
+                }
+            ]
+        },
+        "parentHardwareId": [
+            "84CCA856ABA8"
+        ],
+        "tags": [
+            "30EB5AFFFFB313C5",
+            "1012400931394",
+            "84CCA856ABA8"
+        ],
+        "hardwareIdNames": [
+            "MPAN",
+            "EUI"
+        ],
+        "active": true,
+        "deviceTypeId": "51d5ac18-4f7d-494d-a6b0-371742222d5c",
+        "ownerId": "b61b2523-60c2-46e7-a85f-993a4b7b3b0e",
+        "hardwareIds": {
+            "MPAN": "1012400931394",
+            "EUI": "30EB5AFFFFB313C5"
+        },
+        "hardwareId": "30EB5AFFFFB313C5",
+        "description": "Electricity Smart Meter (DCC sourced)",
+        "deviceId": "698b5ed3-9120-4aa8-b311-705a27a7f036",
+        "updatedAt": "2021-12-20T17:01:11.176Z",
+        "createdAt": "2021-10-08T01:55:35.892Z"
+    },
+    {
+        "protocol": {
+            "protocol": "dcc",
+            "sensors": [{
+                    "resourceTypeId": "a6b95f41-771d-4bd2-99f4-93ee43c38f5a",
+                    "protocolId": "0702:04:00",
+                    "resourceId": "f16983d0-8c56-4b3b-bb32-38066df6b744"
+                },
+                {
+                    "resourceTypeId": "08ab415f-d851-423f-adf4-c2b1e0529e27",
+                    "protocolId": "0702:04:00",
+                    "resourceId": "5dc089fd-9e70-407b-8fc8-9c65f243d9f0"
+                }
+            ]
+        },
+        "parentHardwareId": [
+            "84CCA856ABA8"
+        ],
+        "tags": [
+            "30EB5AFFFF98B6F9",
+            "3342241002",
+            "1012400931394",
+            "84CCA856ABA8"
+        ],
+        "hardwareIdNames": [
+            "MPRN",
+            "MPAN",
+            "EUI"
+        ],
+        "active": true,
+        "deviceTypeId": "81825a67-c205-434f-8c56-6fff5faafcde",
+        "ownerId": "b61b2523-60c2-46e7-a85f-993a4b7b3b0e",
+        "hardwareIds": {
+            "MPRN": "3342241002",
+            "MPAN": "1012400931394",
+            "EUI": "30EB5AFFFF98B6F9"
+        },
+        "hardwareId": "30EB5AFFFF98B6F9",
+        "description": "Gas Meter (DCC sourced)",
+        "deviceId": "0f08eab8-eb22-44f1-aff6-bac6a7db5aba",
+        "updatedAt": "2021-12-20T17:01:11.186Z",
+        "createdAt": "2021-10-08T01:56:13.197Z"
+    },
+    {
+        "protocol": {
+            "protocol": "Zigbee",
+            "sensors": [{
+                "resourceTypeId": "c1ba7ea0-0a4d-4052-9c95-4a0b7c6946f7",
+                "protocolId": "electricity.consumption",
+                "resourceId": "6bf12d5d-c3d9-4332-979c-31e2f9c66326"
+            }]
+        },
+        "parentHardwareId": [],
+        "tags": [
+            "84CCA856ABA8",
+            "GC5000003",
+            "70B3D521E00102DD"
+        ],
+        "hardwareIdNames": [
+            "MAC",
+            "serialNumber",
+            "EUI"
+        ],
+        "active": true,
+        "ownerId": "b61b2523-60c2-46e7-a85f-993a4b7b3b0e",
+        "hardwareIds": {
+            "MAC": "84CCA856ABA8",
+            "serialNumber": "GC5000003",
+            "EUI": "70B3D521E00102DD"
+        },
+        "deviceTypeId": "babdf10f-199c-43fb-99eb-7ea86f3c0ace",
+        "hardwareId": "84CCA856ABA8",
+        "description": "Glow NB-IoT",
+        "deviceId": "0190894d-670f-4985-a390-0ecda155b9f9",
+        "updatedAt": "2021-12-20T17:01:10.388Z",
+        "createdAt": "2021-12-20T17:01:10.388Z"
+    }
+]
