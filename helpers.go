@@ -5,25 +5,25 @@ import "fmt"
 // GetElectricityConsumptionResourceID returns the resource ID of the
 // electricity consumption resource.
 func (c *Client) GetElectricityConsumptionResourceID() (string, error) {
-	return c.findByClassifier(ElectricityConsumption)
+	return c.findByClassifier(ElectricityConsumption, KWH)
 }
 
 // GetGasConsumptionResourceID returns the resource ID of the gas consumption
 // resource.
 func (c *Client) GetGasConsumptionResourceID() (string, error) {
-	return c.findByClassifier(GasConsumption)
+	return c.findByClassifier(GasConsumption, KWH)
 }
 
 // GetElectricityConsumptionCostResourceID returns the resource ID of the
 // electricity consumption cost resource.
 func (c *Client) GetElectricityConsumptionCostResourceID() (string, error) {
-	return c.findByClassifier(ElectricityConsumptionCost)
+	return c.findByClassifier(ElectricityConsumptionCost, Pence)
 }
 
 // GetGasConsumptionCostResourceID returns the resource ID of the gas
 // consumption cost resource.
 func (c *Client) GetGasConsumptionCostResourceID() (string, error) {
-	return c.findByClassifier(GasConsumptionCost)
+	return c.findByClassifier(GasConsumptionCost, Pence)
 }
 
 // GetElectricityCurrent returns a ResourceCurrent for the electricity
@@ -49,14 +49,14 @@ func (c *Client) GetGasCurrentWatts() (int, error) {
 	return c.getCurrentWatts(GasConsumption)
 }
 
-func (c *Client) findByClassifier(cl ClassifierField) (string, error) {
+func (c *Client) findByClassifier(cl ClassifierField, unit string) (string, error) {
 	res, err := c.GetResources()
 	if err != nil {
 		return "", err
 	}
 
 	for _, r := range res {
-		if r.Classifier == cl && r.DataSourceResourceTypeInfo.Unit == KWH {
+		if r.Classifier == cl && r.DataSourceResourceTypeInfo.Unit == unit {
 			return r.ResourceID, nil
 		}
 	}
@@ -64,7 +64,7 @@ func (c *Client) findByClassifier(cl ClassifierField) (string, error) {
 }
 
 func (c *Client) getCurrent(cl ClassifierField) (ResourceCurrent, error) {
-	resourceID, err := c.findByClassifier(cl)
+	resourceID, err := c.findByClassifier(cl, KWH)
 	if err != nil {
 		return ResourceCurrent{}, err
 	}

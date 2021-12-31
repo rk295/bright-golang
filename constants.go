@@ -20,5 +20,6 @@ const (
 
 	testDataDir = "test-data"
 
-	KWH = "kWh"
+	KWH   = "kWh"
+	Pence = "pence"
 )
