@@ -46,4 +46,4 @@ In [cmd/sample-mqtt](cmd/sample-mqtt) there is a MQTT client which will connect 
 
 ### Prometheus Exporter
 
-in [cmd/sample-exporter-api](cmd/sample-exporter-api) there is a Prometheus exporter which fetches data from the Bright API. Again have a look at the [README.md](cmd/sample-exporter-api/README.md) in that directory.
+in [cmd/bright-exporter-api](cmd/bright-exporter-api) there is a Prometheus exporter which fetches data from the Bright API. Again have a look at the [README.md](cmd/bright-exporter-api/README.md) in that directory.
