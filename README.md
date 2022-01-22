@@ -34,6 +34,16 @@ Ouput:
 
 Indicating that 566W of electricity is being used now.
 
-## Sample app
+## Sample apps
+
+### Simple CLI
 
 In [cmd/sample-client](cmd/sample-client) there is a simple sample application. Have a look at the [README.md](cmd/sample-client/README.md) in there for more.
+
+### MQTT
+
+In [cmd/sample-mqtt](cmd/sample-mqtt) there is a MQTT client which will connect to Bright via MQTT if they have enabled it for you. There is a [README.md](cmd/sample-mqtt/README.md) in there with more info.
+
+### Prometheus Exporter
+
+in [cmd/sample-exporter-api](cmd/sample-exporter-api) there is a Prometheus exporter which fetches data from the Bright API. Again have a look at the [README.md](cmd/sample-exporter-api/README.md) in that directory.
