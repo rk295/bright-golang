@@ -19,6 +19,9 @@ jobs:
           # must be specified without patch version
           version: v1.29
           skip-build-cache: true
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
 
   test:
     name: Go Test
